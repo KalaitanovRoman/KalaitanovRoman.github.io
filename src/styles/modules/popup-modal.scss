@@ -1,0 +1,105 @@
+.popup {
+  &-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $block-background-color;
+    overflow: auto;
+  }
+
+  &-list {
+    padding: 0 15px;
+  }
+
+  &-block {
+    @include default-block;
+    position: relative;
+
+    &_title {
+      position: relative;
+      padding: 15px;
+
+      & > h3 {
+        color: $main-font-color;
+        @include fluidFontSize(20px, 24px);
+        font-weight: 500;
+      }
+    }
+
+    &_description {
+      position: relative;
+      padding: 15px 40px 15px 15px;
+    }
+
+    &_price {
+      margin-bottom: 15px;
+      & > p {
+        @include fluidFontSize(18px, 22px);
+        font-weight: 700;
+      }
+    }
+
+    &_payment,
+    &_discount,
+    &_date {
+      & p {
+        @include fluidFontSize(18px, 20px)
+      }
+    }
+
+    &_date {
+      margin-top: 15px;
+      & p {
+        color: #b1b1b1;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 640px) {
+  .popup{
+    &-list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-block {
+      width: 49%;
+    }
+  }
+
+  #tariff-choice-modal {
+    & .popup {
+      &-list {
+        justify-content: center;
+      }
+      &-block {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .popup{
+    &-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    &-block {
+      width: 32.5%;
+      margin-bottom: calc(100% / 3 - 32.1%);
+      margin-right: calc(100% / 3 - 32.1%);
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

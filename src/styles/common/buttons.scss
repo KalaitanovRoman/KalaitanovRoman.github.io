@@ -1,0 +1,31 @@
+.next-step-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background-image: url('../assets/images/arrow-right.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+  cursor: pointer;
+  &:hover {
+    background-size: 25px;;
+  }
+}
+
+.choice-button {
+  width: calc(100% - 30px);
+  margin: 15px auto;
+  padding: 15px;
+  color: #ffffff;
+  @include fluidFontSize(18px, 22px);
+  background-color: $main-font-color;
+  cursor: pointer;
+  &:hover {
+    background-color: #065d88;
+  }
+  &.selected {
+    background-color: #0e6b98;
+  }
+}

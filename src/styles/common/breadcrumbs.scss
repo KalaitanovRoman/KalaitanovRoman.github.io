@@ -1,0 +1,33 @@
+.breadcrumbs {
+  @include default-block;
+
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  padding: 15px;
+
+  &_close {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background-image: url('../assets/images/arrow-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    cursor: pointer;
+    &:hover {
+      background-size: 25px;;
+    }
+  }
+
+  &_title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    & > h2 {
+      @include fluidFontSize(20px, 24px);
+    }
+  }
+}
