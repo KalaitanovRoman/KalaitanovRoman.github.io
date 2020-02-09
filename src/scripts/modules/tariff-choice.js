@@ -1,4 +1,4 @@
-import {ModalPopupWindow} from "./modal-popup-window";
+import {ModalPopupWindow} from './modal-popup-window';
 
 export class TariffChoice extends ModalPopupWindow{
     constructor(data, title) {
@@ -38,6 +38,6 @@ export class TariffChoice extends ModalPopupWindow{
             isChoice: true
         };
 
-        ModalPopupWindow.open(config)
+        ModalPopupWindow.open(config);
     }
 }

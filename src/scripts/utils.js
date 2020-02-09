@@ -1,8 +1,8 @@
-import {BACKGROUND_COLOR} from "./constants";
+import {BACKGROUND_COLOR} from './constants';
 
 export const HttpDataRequest = (url, method = 'GET') => {
     return new Promise((resolve, reject) => {
-        let xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
 
         xhr.open(method, url, true);
 
@@ -10,7 +10,7 @@ export const HttpDataRequest = (url, method = 'GET') => {
             if (xhr.status === 200) {
                 resolve(JSON.parse(xhr.response));
             } else {
-                let error = new Error(xhr.statusText);
+                const error = new Error(xhr.statusText);
                 error.code = status;
                 reject(error);
             }
@@ -24,12 +24,12 @@ export const changeColorLabel = (title, speed) => {
     const keys = Object.keys(BACKGROUND_COLOR);
     let backgroundColor;
 
-    for (let item in keys) {
+    for (const item in keys) {
         if (title === keys[item]) {
             backgroundColor = BACKGROUND_COLOR[keys[item]];
         }
     }
-    return `<span style="background-color: ${backgroundColor}">${speed} Мбит/с</span>`
+    return `<span style="background-color: ${backgroundColor}">${speed} Мбит/с</span>`;
 };
 
 export const getValidDate = (date) => {
