@@ -1,5 +1,5 @@
-import {changeColorLabel} from "../utils";
-import {TariffInfo} from "./tariff-info";
+import {changeColorLabel} from '../utils';
+import {TariffInfo} from './tariff-info';
 
 export class TariffList {
     constructor(data) {
@@ -15,24 +15,23 @@ export class TariffList {
             const p = document.createElement('p');
 
             p.innerText = item;
-            optionsBlock.appendChild(p)
+            optionsBlock.appendChild(p);
         });
 
         return optionsBlock.innerHTML;
     }
 
     getPrice(value) {
-        let arr = [];
-        let max, min;
+        const arr = [];
 
         value.forEach(({price}) => {
-            return arr.push(price)
+            return arr.push(price);
         });
 
-        min = Math.max(...arr);
-        max = Math.min(...arr);
+        const min = Math.max(...arr);
+        const max = Math.min(...arr);
 
-        return `<span>${min / 12} - ${max} &#8381;/мес</span>`
+        return `<span>${min / 12} - ${max} &#8381;/мес</span>`;
     }
 
     getTariffBlocks(data) {
@@ -84,13 +83,13 @@ export class TariffList {
             const title = target.getAttribute('data-title');
 
             if (target.closest('.next-step-button')) {
-                for (let item of this.data) {
+                for (const item of this.data) {
                     if (item.title === title) {
                         new TariffInfo(item.tariffs, item.title);
                     }
                 }
             }
-        })
+        });
     }
 
     render() {

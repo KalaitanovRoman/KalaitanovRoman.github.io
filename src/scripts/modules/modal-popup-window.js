@@ -1,5 +1,5 @@
-import {MDASH} from '../constants'
-import {getCorrectMouthName, getValidDate} from "../utils";
+import {MDASH} from '../constants';
+import {getCorrectMouthName, getValidDate} from '../utils';
 
 export class ModalPopupWindow {
     static getBreadcrumbs(title) {
@@ -38,7 +38,7 @@ export class ModalPopupWindow {
             nextStep,
             isChoice
         } = config;
-        let arr = [];
+        const arr = [];
 
         body.style.overflow = 'hidden';
         popupWrap.id = modalName;
@@ -65,10 +65,10 @@ export class ModalPopupWindow {
             const isSelected = Number(localStorage.getItem('selectedTariffId')) === id;
             const choiceButton = () => {
                 if (Number(localStorage.getItem('selectedTariffId')) === id) {
-                    return `<button class="choice-button selected">Выбрано</button>`
+                    return '<button class="choice-button selected">Выбрано</button>';
                 }
 
-                return `<button class="choice-button">Выбрать</button>`
+                return '<button class="choice-button">Выбрать</button>';
             };
 
             popupContentBlock.className = `popup-block block-id-${id}`;
@@ -77,7 +77,7 @@ export class ModalPopupWindow {
                 <div class="popup-block_title">
                     <h3>${isChoice ? title : getCorrectMouthName(pay_period)}</h3>
                     ${isSelected ?
-                        (`<i class="selected-tariff"></i>`)
+                        ('<i class="selected-tariff"></i>')
                         : ''
                     }
                     <div class="separator"></div>

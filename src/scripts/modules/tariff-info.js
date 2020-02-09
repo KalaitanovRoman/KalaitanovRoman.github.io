@@ -1,5 +1,5 @@
-import {ModalPopupWindow} from "./modal-popup-window";
-import {TariffChoice} from "./tariff-choice";
+import {ModalPopupWindow} from './modal-popup-window';
+import {TariffChoice} from './tariff-choice';
 
 export class TariffInfo extends ModalPopupWindow {
     constructor(data, title) {
@@ -22,9 +22,9 @@ export class TariffInfo extends ModalPopupWindow {
             }
 
             if (target.closest('.next-step-button')) {
-                for (let item of this.data) {
+                for (const item of this.data) {
                     if (item.id === Number(tariffId)) {
-                        new TariffChoice([item], 'Выбор тарифа')
+                        new TariffChoice([item], 'Выбор тарифа');
                     }
                 }
             }
@@ -39,6 +39,6 @@ export class TariffInfo extends ModalPopupWindow {
             nextStep: true,
         };
 
-        ModalPopupWindow.open(config)
+        ModalPopupWindow.open(config);
     }
 }

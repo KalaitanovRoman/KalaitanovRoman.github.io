@@ -1,5 +1,5 @@
-import {HttpDataRequest} from "./utils";
-import {TariffList} from "./modules/tariff-list";
+import {HttpDataRequest} from './utils';
+import {TariffList} from './modules/tariff-list';
 
 HttpDataRequest('https://next.json-generator.com/api/json/get/VkLDNSEWu')
     .then(({tariffs}) => {
