@@ -1,6 +1,6 @@
 import {BACKGROUND_COLOR} from "./constants";
 
-export const HttpDataRequest = (method, url) => {
+export const HttpDataRequest = (url, method = 'GET') => {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
 

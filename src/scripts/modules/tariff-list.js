@@ -40,7 +40,7 @@ export class TariffList {
         const {
             title,
             speed,
-            tarifs,
+            tariffs,
             free_options,
             link
         } = data;
@@ -57,7 +57,7 @@ export class TariffList {
                     ${changeColorLabel(title, speed)}
                 </div>
                 <div class="tariff-block_price">
-                    ${this.getPrice(tarifs)}
+                    ${this.getPrice(tariffs)}
                 </div>
                 ${free_options ?
                     (`<div class="tariff-block_options">
@@ -86,7 +86,7 @@ export class TariffList {
             if (target.closest('.next-step-button')) {
                 for (let item of this.data) {
                     if (item.title === title) {
-                        new TariffInfo(item.tarifs, item.title);
+                        new TariffInfo(item.tariffs, item.title);
                     }
                 }
             }
